@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8" />
+    <title>Dog rescue center</title>
+    <link rel="icon" type="image/jp" href="3.jpg">
+    <style>
+        .header {
+    display: flex;
+    justify-content: space-between;  /* 分别对齐 */
+    align-items: center;  /* 垂直居中 */
+        }
+       body {
+  background-image:url('2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}   
+        h1{
+            color:rgb(57, 167,241) ;
+        } 
+        .page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;  /* 让页面最小高度为100vh，确保footer在底部 */
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        
+        }
+        .footer {
+          margin-top: auto; /* 自动推到页面底部 */
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        } 
+        .header1{
+        /*     background-color: #f8f9fa; */
+            text-align: center;
+            padding: 20px;
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        }
+        .aside {
+            flex: 1;
+            padding: 20px;
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        }
+        .main {
+            flex: 8;
+            padding: 20px;
+           /*  background-color: #e9ecef; */
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        }   
+        ul {
+            list-style-type: none;
+            padding: 0;
+            background-color:num;
+        }
+
+        ul li {
+            margin: 50px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 15px;
+            background-color: rgb(57, 167, 241); /* Change this to your desired color */
+            border-radius: 5px;
+            display: block;
+            transition: background-color 0.3s; /* 按钮属性设计 */
+        }
+
+        ul li a:hover {
+            background-color: #45a049; /* Change this to your desired hover color */
+        }
+        .result {
+            display: none;
+            color: rgb(57, 167, 241);
+            font-size: 120%;
+            text-align: right;
+        }
+        #customers {   /*Table */
+            font-family: Name, Address, Telephone;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+        #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+        }
+        #content2 {
+            width: 80%; /* 容器宽度 */
+            margin: 0 auto; /* 居中 */
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: space-between; /* 平分空白，图片均匀分布 */
+            margin-bottom: 20px; /* 行间距 */
+        }
+
+        .container {
+            position: relative;
+            width: 48%; /* 每张图片占父容器宽度的48%（留出空隙） */
+        }
+
+        .image {
+            display: block;
+            width: 100%; /* 设置图片宽度为容器的宽度 */
+            height: 500px; /* 固定高度 */
+            object-fit: cover; /* 保持图片比例并填满容器 */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: 0.5s ease;
+            background-color: rgba(0, 140, 186, 0.8); /* 半透明背景 */
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center; /* 居中对齐 */
+            word-wrap: break-word; /* 长单词换行 */
+            white-space: normal; /* 允许换行 */
+            max-width: 90%; /* 限制文字宽度，避免超出图片 */
+        }
+
+        * { /* Form */
+            box-sizing: border-box;
+            }
+
+            input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            }
+
+            label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            }
+
+            input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            }
+
+            input[type=submit]:hover {
+            background-color: #45a049;
+            }
+
+            .container2 {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            }
+
+            .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+            }
+
+            .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+            }
+
+            /* Clear floats after the columns */
+            .row::after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+            
+            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+            }
+
+            video {
+            width: 100%;
+            height: auto;
+            }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // 此代码将在页面加载完成后执行
+          showContent('content0');
+        });//显示刚进入网站时的样子
+    </script>
+</head>
+<body>
+    <h1 class="header">
+        Dog rescue center
+        <img src="3.jpg" width="16%">
+    </h1>
+    <p style="color: rgb(57, 167, 241); font-size: 120%;"> As the quality of life improves, people pay more and more attention to animals. Dogs are a particularly good animal, and many people like to keep dogs. However, there are still many dogs that are lost, or there is no nearby hospital to treat them. The design of our center is to better serve the dog-loving community. Here you can adopt a dog, or upload information about lost dogs. There is also information about nearby hospitals that can treat dogs.
+    </p>
+    <hr>
+        <div class="page">
+          <header class="header1">
+          <h2 style="color:rgb(57, 167, 241);">Dog rescue center</h2>
+          </header>
+          <div class="content">
+              <aside class="aside">
+                <h3 style="color:rgb(57, 167, 241);text-align: left;">List</h3>
+                <ul>
+                  <li><a href="#" onclick="showContent('content1'); return false;">Hospital</a></li>
+                  <li><a href="#" onclick="showContent('content2'); return false;">Adoption List</a></li>
+                  <li><a href="#" onclick="showContent('content3'); return false;">Lost Information</a></li> <!-- 编辑按钮 -->
+                  <li><a href="#" onclick="showContent('content4'); return false;">contact information</a></li> <!-- 编辑按钮 -->
+                </ul>
+                  
+              </aside>
+                <main class="main">
+                  <main id="main" class="main">
+                    <div id="content0" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Welcome</h3>
+                        <video width="400" autoplay muted controls>
+                            <source src="1.mp4" type="video/mp4">
+                            <source src="1.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p style="color: rgb(57, 167, 241); font-size: 120%; text-align: right;">Welcome to the Dog Rescue Center</p>
+                    </div> 
+                    <div id="content1">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Hospital</h3>
+                        <h1>Hospital Information</h1>
+                        <table id="customers">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Telephone</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Table rows will be dynamically generated here -->
+                            </tbody>
+                        </table>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button id="prevBtn" onclick="prevPage()" disabled>Previous</button>
+                            <span id="page-info"></span>
+                            <button id="nextBtn" onclick="nextPage()">Next</button>
+                        </div>
+                        <p style="color: rgb(57, 167, 241); font-size: 120%;text-align:right">Hospital</p>
+                    </div>
+
+                    <div id="content2" style="display: none;"> 
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Adoption List</h3>
+                        <!-- 第一行 -->
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="Dog1.jpg" alt="Dog 1" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 1:</p>
+                                        <p>Name: Pepe</p>
+                                        <p>Age: 4</p>
+                                        <p>Weight: 15kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="Dog2.jpg" alt="Dog 2" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 2:</p>
+                                        <p>Name: Momo</p>
+                                        <p>Age: 3</p>
+                                        <p>Weight: 17kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 第二行 -->
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="Dog3.jpg" alt="Dog 3" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 3:</p>
+                                        <p>Name: juice</p>
+                                        <p>Age: 2</p>
+                                        <p>Weight: 12kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="Dog4.jpg" alt="Dog 4" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 4:</p>
+                                        <p>Name: white</p>
+                                        <p>Age: 3</p>
+                                        <p>Weight: 14kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="Dog5.jpg" alt="Dog 5" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 5:</p>
+                                        <p>Name: Donic</p>
+                                        <p>Age: 4</p>
+                                        <p>Weight: 13kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="Dog6.jpg" alt="Dog 6" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 6:</p>
+                                        <p>Name: Q</p>
+                                        <p>Age: 3</p>
+                                        <p>Weight: 15kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="Dog7.jpg" alt="Dog 7" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 7:</p>
+                                        <p>Name: Manic</p>
+                                        <p>Age: 5</p>
+                                        <p>Weight: 17kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="Dog8.jpg" alt="Dog 8" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 8:</p>
+                                        <p>Name: Sun</p>
+                                        <p>Age: 5</p>
+                                        <p>Weight: 18kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="Dog9.jpg" alt="Dog 9" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 9:</p>
+                                        <p>Name: Losee</p>
+                                        <p>Age: 4</p>
+                                        <p>Weight: 16kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="Dog10.jpg" alt="Dog 10" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 10:</p>
+                                        <p>Name: Lick</p>
+                                        <p>Age: 4</p>
+                                        <p>Weight: 15kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="Dog11.jpg" alt="Dog 11" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 11:</p>
+                                        <p>Name: Smile</p>
+                                        <p>Age: 4</p>
+                                        <p>Weight: 19kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="Dog12.jpg" alt="Dog 12" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Dog 12:</p>
+                                        <p>Name: CC</p>
+                                        <p>Age: 2</p>
+                                        <p>Weight: 12kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: rgb(57, 167, 241); font-size: 120%; text-align:right;">Adoption List</p>
+                    </div>
+                    
+                    <div id="content3" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Lost Information</h3>
+                        <h2>Information Form</h2>
+                        <p>Please enter your personal information and the dog's situation, and we will promptly feedback the data to the adoption station.</p>
+
+                        <div class="container2">
+                            <form action="http://localhost:3000/save" method="POST">
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="fname">First Name</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="lname">Last Name</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="phone">Phonenumber</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="phone" name="phonenumber" placeholder="Your phonenumber..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="subject">Describe</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <p style="color: rgb(57, 167, 241); font-size: 120%;text-align:right">Lost Information</p>
+                    </div>                
+
+                    <div id="content4" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241);">contact information</h3>
+                        <h3 style="color:rgb(11, 2, 16);">We are passionate about caring for dogs. We can provide relevant resource information or work together. If you have any related questions, you can find us through the following contact information. We look forward to your contact.</h3>
+                        <h4 style="color:rgb(147, 19, 87);">
+                            Address: <a href="https://www.google.com/maps?q=60+Huntington+Ave,+Boston,+MA" target="_blank" style="color:inherit; text-decoration:none;">60 Huntington Ave, Boston, MA</a>
+                        </h4>
+                        <h4 style="color:rgb(11, 2, 16);">Zip Code:02115</h4>
+                        <h4 style="color:rgb(11, 2, 16);">Telephone:xxx-xxx-xxxx</h4>
+                        <h4 style="color:rgb(11, 2, 16);">Email:chwr0001@gmail.com</h4>
+                    </div>
+              </main>
+          </div>
+      </div>
+      <footer style="text-align: center; color: rgb(136, 3, 3); font-size: 120%; margin-top: 20px;">
+        <p>Thank you for visiting the Dog Rescue Center</p>
+    </footer>
+</body>
+<script>
+    function showContent(id) {
+    // 隐藏所有内容
+    var contents = document.getElementById('main').children;
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+    // 显示选中的内容
+    document.getElementById(id).style.display = 'block';
+}
+
+//     function showContent(id) {
+//     if (id === 'content1') {
+//         window.open('web端.html1', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     if (id === 'content2') {
+//         window.open('web端.html2', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     if (id === 'content3') {
+//         window.open('web端.html3', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     if (id === 'content4') {
+//         window.open('web端.html4', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     else {
+//         var contents = document.getElementById('main').children;
+//         for (var i = 0; i < contents.length; i++) {
+//             contents[i].style.display = 'none';
+//         }
+//         document.getElementById(id).style.display = 'block';
+//     }
+// }
+
+// 当页面加载完成后，显示默认的欢迎内容
+        const hospitals = [
+            { name: "IVG Hospitals", address: "20 Cabot Rd, Woburn, MA", phone: "(781) 932-5802" },
+            { name: "The Urban Hound", address: "129 Malden St,Boston, MA 02116", phone: "(617) 755-5775" },
+            { name: "Jamaica Plain Animal Clinic", address: "10A Green St,Jamaica Plain, MA 02130", phone: "(617) 524-7300" },
+            { name: "Porter Square Veterinarian", address: "360 Summer St,Somerville, MA 02143", phone: "(617) 628-5588" },
+            { name: "Mailman's Pet Service", address: "Jamaica Plain, MA 02130", phone: "(857) 204-7571" },
+            { name: "Banfield Pet Hospital", address: "160 Alewife Brook Pkwy,Cambridge, MA 02138", phone: "(617) 354-1333" },
+            { name: "Fresh Pond Animal Hospital", address: "15 Flanders Rd,Belmont, MA 02478", phone: "(617) 484-1555" },
+            { name: "Parkway Veterinary Hospital", address: "18 Spring St,West Roxbury, MA 02132", phone: "(617) 469-8400" },
+            { name: "Village Veterinary Clinic", address: "223 Boylston St,Brookline, MA 02445", phone: "(617) 232-4462" },
+            { name: "Arlington Animal Clinic", address: "191 Broadway,Arlington, MA 02474", phone: "(781) 646-0758" },
+            { name: "Animal Hospital of Cambridge", address: "10 Memorial Dr, Cambridge, MA", phone: "(617) 555-7890" },
+            { name: "Belmont Veterinary Center", address: "32 Main St, Belmont, MA", phone: "(617) 555-1234" },
+            { name: "Neponset Pet Center & Animal Hospital", address: "961 William T Morrissey Blvd,Dorchester, MA 02122", phone: "(617) 288-2333" },
+            { name: "Hancock Animal Hospital", address: "55 Hancock St,Quincy, MA 02171", phone: "(617) 773-0008" },
+            { name: "VCA Everett Animal Hospital", address: "251 Chelsea St,Everett, MA 02149", phone: "(617) 981-7677" },
+        ];
+
+        const rowsPerPage = 10; // 每页显示的行数
+        let currentPage = 1; // 当前页码
+
+        // 渲染表格内容
+        function renderTable() {
+            const startIndex = (currentPage - 1) * rowsPerPage;
+            const endIndex = startIndex + rowsPerPage;
+            const pageData = hospitals.slice(startIndex, endIndex);
+
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = ""; // 清空表格内容
+
+            pageData.forEach(hospital => {
+                const row = `<tr>
+                    <td>${hospital.name}</td>
+                    <td>${hospital.address}</td>
+                    <td>${hospital.phone}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            updatePaginationInfo();
+        }
+
+        // 更新分页信息和按钮状态
+        function updatePaginationInfo() {
+            const totalPages = Math.ceil(hospitals.length / rowsPerPage);
+            document.getElementById("page-info").innerText = `Page ${currentPage} of ${totalPages}`;
+
+            document.getElementById("prevBtn").disabled = currentPage === 1;
+            document.getElementById("nextBtn").disabled = currentPage === totalPages;
+        }
+
+        // 下一页
+        function nextPage() {
+            const totalPages = Math.ceil(hospitals.length / rowsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        }
+
+        // 上一页
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        }
+
+        window.onload = function() {
+        showContent('content0'); // 显示默认的欢迎页面内容
+        renderTable(); // 初始化表格第一页数据
+        };
+
+        function saveData() {//链接数据
+            // 获取表单数据
+            const fname = document.getElementById("fname").value;
+            const lname = document.getElementById("lname").value;
+            const Phonenumber = document.getElementById("phone").value;
+            const subject = document.getElementById("subject").value;
+
+            // 格式化数据
+            const data = `First Name: ${fname}\nLast Name: ${lname}\nPhonenumber: ${phone}\nSubject: ${subject}\n-------------------\n`;
+
+            // 创建 Blob 对象
+            const blob = new Blob([data], { type: "text/plain" });
+
+            // 创建一个下载链接
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "data.txt"; // 文件名
+            a.click();
+
+            // 释放 URL 对象
+            URL.revokeObjectURL(a.href);
+        }
+
+
+</script>
+
+</html>
