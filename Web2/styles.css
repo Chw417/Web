@@ -1,0 +1,365 @@
+.header {
+    display: flex;
+    justify-content: space-between;  /* 分别对齐 */
+    align-items: center;  /* 垂直居中 */
+        }
+       body {
+  background-color: #4c4d6d;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+        h1{
+            color:rgb(57, 167,241) ;
+        } 
+        .page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;  /* 让页面最小高度为100vh，确保footer在底部 */
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        } 
+        .header1{
+        /*     background-color: #f8f9fa; */
+            text-align: center;
+            padding: 20px;
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        }
+        .aside {
+            flex: 1;
+            padding: 20px;
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        }
+        .main {
+            flex: 8;
+            padding: 20px;
+           /*  background-color: #e9ecef; */
+            border-style: double;
+            border-color:rgb(57, 167,241) ;/* 边框设计 */
+        }   
+        .footer {
+            margin-top: auto; /* 自动推到页面底部 */
+          }  
+        ul {
+            list-style-type: none;
+            padding: 0;
+            background-color:num;
+        }
+
+        ul li {
+            margin: 50px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 15px;
+            background-color: rgb(57, 167, 241); /* Change this to your desired color */
+            border-radius: 5px;
+            display: block;
+            transition: background-color 0.3s; /* 按钮属性设计 */
+        }
+
+        ul li a:hover {
+            background-color: #45a049; /* Change this to your desired hover color */
+        }
+        .result {
+            display: none;
+            color: rgb(57, 167, 241);
+            font-size: 120%;
+            text-align: right;
+        }
+        #customers {   /*Table */
+            font-family: Name, Address, Telephone;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+        #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+        }
+        #content2 {
+            width: 80%; /* 容器宽度 */
+            margin: 0 auto; /* 居中 */
+        }
+        /*image*/
+        .image-row {
+            display: flex;
+            justify-content: space-between; /* 平分空白，图片均匀分布 */
+            margin-bottom: 20px; /* 行间距 */
+        }
+
+        .container {
+            position: relative;
+            width: 48%; /* 每张图片占父容器宽度的48%（留出空隙） */
+        }
+        .image {
+            display: block;
+            width: 100%; /* 设置图片宽度为容器的宽度 */
+            height: 500px; /* 固定高度 */
+            object-fit: cover; /* 保持图片比例并填满容器 */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: 0.5s ease;
+            background-color: rgba(0, 140, 186, 0.8); /* 半透明背景 */
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center; /* 居中对齐 */
+            word-wrap: break-word; /* 长单词换行 */
+            white-space: normal; /* 允许换行 */
+            max-width: 90%; /* 限制文字宽度，避免超出图片 */
+        }
+
+        * { /* Form */
+            box-sizing: border-box;
+            }
+
+            input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            }
+
+            label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            }
+
+            input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            }
+
+            input[type=submit]:hover {
+            background-color: #45a049;
+            }
+
+            .container2 {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            }
+
+            .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+            }
+
+            .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+            }
+            /* Clear floats after the columns */
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+                }
+                
+                /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+                @media screen and (max-width: 600px) {
+                .col-25, .col-75, input[type=submit] {
+                    width: 100%;
+                    margin-top: 0;
+                }
+                }
+                .thin-image { 
+                    width: 100%;
+                    height: 200px; /* 设置一个固定的高度 */
+                    object-fit: cover; /* 确保图片按比例裁剪，不会拉伸变形 */
+                }
+                .background-text { /*b上背景*/
+                    background-image: url("2.jpg"); /* 背景图片路径 */
+                    background-size: 100% 200px; /* 背景宽度100%，高度200px */
+                    background-repeat: no-repeat; /* 防止背景图片重复 */
+                    background-position: center; /* 背景图片居中 */
+                    height: 200px; /* 设置容器高度 */
+                    color: white; /* 设置文字颜色 */
+                    font-size: 120%; /* 调整文字大小 */
+                    padding: 20px; /* 添加内边距 */
+                    text-align: left; /* 图片和文字水平居中 */
+                    display: flex; /* 使用 Flexbox 布局 */
+                    flex-direction: column; /* 将内容从上到下排列 */
+                }
+                .background-text:hover{
+                    transform: scale(1.05);
+                }
+                .profile-image {
+                    width: 10%; /* 图片宽度 */
+                    margin-bottom: 10px; /* 图片和文字之间的间距 */
+                }
+                #img1 {
+                    clip-path: circle(40%);
+                  }
+
+                /* For iPad (768px) */
+                @media screen and (max-width: 768px) {
+                .header {
+                    flex-direction: column; /* Stack header elements */
+                    text-align: center;
+                }
+
+                .content {
+                    flex-direction: column; /* Stack content vertically */
+                }
+
+                .aside {
+                    flex: 1 1 100%; /* Make the aside take full width */
+                    padding: 10px;
+                }
+
+                .main {
+                    flex: 1 1 100%; /* Make the main content take full width */
+                    padding: 10px;
+                }
+
+                .image-row {
+                    flex-direction: column; /* Stack images vertically */
+                    margin-bottom: 10px;
+                }
+
+                .container {
+                    width: 100%; /* Make the image container full width */
+                    margin-bottom: 10px;
+                }
+
+                .header1 {
+                    padding: 10px;
+                }
+
+                ul li {
+                    margin: 20px 0; /* Reduced margin for small screens */
+                }
+
+                .container2 {
+                    padding: 10px;
+                }
+
+                .col-25, .col-75 {
+                    float: none;
+                    width: 100%;
+                    margin-top: 0;
+                }
+
+                input[type=submit] {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+            }
+
+            /* For smartphones (375px) */
+            @media screen and (max-width: 375px) {
+                .header {
+                    flex-direction: column; /* Stack header elements */
+                    text-align: center;
+                }
+
+                .content {
+                    flex-direction: column; /* Stack content vertically */
+                }
+
+                .aside {
+                    flex: 1 1 100%; /* Make the aside take full width */
+                    padding: 10px;
+                }
+
+                .main {
+                    flex: 1 1 100%; /* Make the main content take full width */
+                    padding: 10px;
+                }
+
+                .image-row {
+                    flex-direction: column; /* Stack images vertically */
+                    margin-bottom: 5px;
+                }
+
+                .container {
+                    width: 100%; /* Make the image container full width */
+                    margin-bottom: 5px;
+                }
+
+                .header1 {
+                    padding: 10px;
+                }
+
+                ul li {
+                    margin: 10px 0; /* Reduced margin for smaller screens */
+                }
+
+                .container2 {
+                    padding: 10px;
+                }
+
+                .col-25, .col-75 {
+                    float: none;
+                    width: 100%;
+                    margin-top: 0;
+                }
+
+                input[type=submit] {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                .thin-image {
+                    height: 150px; /* Adjust height for small screens */
+                }
+
+                .background-text {
+                    background-size: 100% 150px; /* Adjust background image size */
+                    font-size: 100%; /* Adjust font size */
+                }
+            }
+            
+                    

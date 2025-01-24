@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <link rel="icon" type="image/jp" href="3.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // 此代码将在页面加载完成后执行
+          showContent('content0');
+        });//显示刚进入网站时的样子
+    </script>
+</head>
+<body>
+    <h1 class="header">
+        Personal Profile
+        <img src="3.jpg" width="10%">
+    </h1>
+    <p class="background-text">
+        <img id="img1" src="6.jpg" class="profile-image">
+        <strong>Hongwei Chen</strong> 
+        <span class="text1">
+            Master of Science in Information System at Northeastern University | 
+            Software Developer highly proficient in Python and Java
+        </span>
+    </p>
+    <hr>
+        <div class="page">
+          <header class="header1">
+          <h2 style="color:rgb(57, 167, 241);">Personal Profile </h2>
+          </header>
+          <div class="content">
+              <aside class="aside">
+                <h3 style="color:rgb(57, 167, 241);text-align: left;">List</h3>
+                <ul>
+                  <li><a href="#" onclick="showContent('content1'); return false;">Profile</a></li>
+                  <li><a href="#" onclick="showContent('content2'); return false;">Experience</a></li>
+                  <li><a href="#" onclick="showContent('content3'); return false;">Inquiry</a></li> <!-- 编辑按钮 -->
+                  <li><a href="#" onclick="showContent('content4'); return false;">contact information</a></li> <!-- 编辑按钮 -->
+                </ul>
+                  
+              </aside>
+                <main class="main">
+                  <main id="main" class="main">
+                    <div id="content1" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Profile</h3>
+                        <p>I like to challenge difficult problems and try my best to complete each challenge. Proficient in Python and Java, and able to design websites (HTML, Javascript).</p>
+                        <p>During my undergraduate studies, I received two papers：</p>
+                        <p>1. Hongwei Chen, “Studies Advanced in Image Classification based on Deep Learning”, Journal of Physics:Conference Series (Print ISSN: 1742-6588) or Applied and Computational Engineering (Print ISSN: 2755-2721)and submitted to EI Compendex, Conference Proceedings Citation Index (CPCI), Crossref, Portico, Inspec, Scopus, Google Scholar, and other databases for indexing (successfully published)</p> 
+                        <h4 style="color:rgb(161, 54, 214);">2.
+                            <a href="https://arxiv.org/abs/2403.01209" target="_blank" style="color:inherit; text-decoration:none;">A CVPR paper is being submitted (Data-free Multi-label Image Recognition via LLM-powered Prompt TuningResearch Experience)</a>
+                        </h4>
+                        <p>I am currently studying for a master's degree in information systems at Northeastern University. During my undergraduate studies, I participated in many projects, using many computer languages and techniques, and have sufficient experience in machine learning and data processing. I participated in many competitions and won many awards.</p>
+                        <h5 style="color:rgb(225, 219, 228);">ADDITIONAL INFORMATION</h5>
+                        <hr>
+                        <strong>Extracurricular Experiences</strong>
+                        <p>● Member, Basketball Club. Participated in various basketball games (Oct. 2020– Present)</p>
+                        <P>● Member of crafts club. Actively engage in discussions and build models (Oct. 2020– Present)</P>
+                        <p>● Volunteer, Model United Nations Conference on Sustainable Development 2023. Answered questions and 
+                            maintained site order (Jul. 2023)</p>
+                        <p>● Volunteer, 5th World Science, Technology and Development Forum Nov. 2023</p>
+                        <strong>Computer and Language Skills</strong>
+                        <p>● Programming Language: C, C++, Python, Java</p>
+                        <p>● Front-end Development: Visual Studio Code, IntelliJ IDEA Community Edition</p>
+                        <p>● Used cs code, Visual Studio Code, Dev C++, IntelliJ IDEA Community Edition for encoding operations</p>
+                        <P>● Programming operations within the Linux system</P>
+                        <P>● Native in Chinese, Proficient in English and Russian</P>
+                        <p style="color: rgb(57, 167, 241); font-size: 120%;text-align:right">This is Profile</p> <!-- 选项的内容 -->
+                    </div>
+                    <div id="content2" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Experience</h3>
+                        <h1>Experience Information</h1>
+                        <table id="customers">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Table rows will be dynamically generated here -->
+                            </tbody>
+                        </table>
+                        <p><strong> 1.Algorithm Case Competition -- Shenzhen, China</strong></p>
+                            Supervised by Prof. Xinxiao Wu 
+                           <p> ● Focused on language-enhanced image categorization algorithms, particularly in the context of multi-label image classification</p>
+                           <p> ● Utilized large-scale natural language descriptions to enhance the discovery of new image categories and used pretrained vision-language (V-L) models to facilitate the transfer of language knowledge to visual knowledge</p>
+                           <p> ● Developed a program to generate datasets by extracting data from question-and-answer in messaging software</p>
+                           <p> ● Designed filtering procedures, standardized procedures, and realized automation formation</p>
+                           <hr>
+                        <P><strong> 2.SMBU School Level Research and Innovation Project</strong></P>
+                            Supervised by Prof. Xinxiao Wu
+                            <p>● Aimed to achieve automatic generation of textual descriptions from product images</p>
+                            <p>● Learned machine learning techniques, actively engaged in project discussions, and designed the website to 
+                                enhance project outcomes</p>
+                            <p>● Participated and attained a third-place award in The 9th China International College Students' 'Internet+' 
+                                Innovation and Entrepreneurship Competition</p>
+                            <hr>
+                        <p><strong>3.2023 Contemporary Undergraduate Mathematical Contest in Modeling</strong></p>
+                            Supervised by Prof. Ye Zhang
+                            <p>● Conducted research on heliostat that serves as a fundamental component for solar energy collection; engineered 
+                                the design of heliostat dimensions and positions to maximize efficiency</p>
+                            <p>● Developed a program to generate data automatically, including coordinates, sizes, and quantities</p>
+                            <p>● Employed programming techniques to transform the generated data into a 3D scatter plot, visually representing 
+                                the specific layout</p>
+                            <p>● Devised a program to simulate the changing angles of the sun throughout the day, segmented into five time periods, 
+                                and integrated various influencing factors</p>
+                            <p>● Utilized the data to generate efficiency tables for subsequent analysis</p>
+                            <p>● Completed the research paper and won the third prize in the competition</p>
+                            <hr>
+                        <p><strong>4.Shenzhen Cup Mathematical Modelling Challenge</strong></p>
+                            Group Project
+                            <p>● Led a project aimed at enhancing the efficiency of crime scene investigations by locating weapons through the 
+                                investigation of the geometric characteristics of certain sharp and blunt objects</p>
+                            <p>● Developed a mathematical model to reverse-reason the causing instrument based on the point source of force, 
+                                deformation range, strain mechanisms, and relevant medium information derived from the victim's wounds, and 
+                                provided examples to demonstrate the approach</p>
+                            <p>● Won third prize in the competition</p>
+                            <hr>
+                        <P><strong>5.Machine Learning Essentials Online Research Seminar</strong></P>
+                            Research Assistant to Prof. Shlomo Ta'asan
+                            <P>● Explored the background of sign language translation and its possible application in the future</P>
+                            <P>● Performed dimensionality reduction and classification processing on data for precise recognition tasks, with 
+                                different classification methods</P>
+                            <P>● Conducted gray processing to reduce the image dimensionality and eliminate the influence of other factors</P>
+                            <p>● Manuscript has been accepted by the International Conference on Software Engineering and Machine Learning 
+                                (CONF-SEML 2023)</p>
+                            <hr>
+                        <p><strong> 6.Study on Reductive Degradation of La2NiO4</strong></p>
+                           Supervised by Dr. Sergei Malyshev, Shenzhen MSU-PPI Teacher
+                           <p>● Conducted independent experiments and research, observing phenomena, registering, analyzing, and drawing 
+                            relevant conclusions</p>
+                           <p>● Utilized X-ray diffraction to confirm that the sample is a single-phase La2NiO4 with a space group of i4/mmm 
+                                and cell parameters of a=b=3.8850 Å and c=12.652 Å</p>
+                           <p>● Employed the citric acid method to procure a black powder sample</p>
+                           <hr>
+                        <P><strong>7.Synthesis Based on Mixed Perovskite Lead Halide and 1,5-pentanediamine</strong></P>
+                            Teaching Assistant to Mikhail Ivanovich Baranov SMBU 
+                            <p>● Conducted independent experiments and research, observing phenomena, registering, analyzing, and drawing 
+                                relevant conclusions</p>
+                            <p>● Successfully achieved the synthesis of perovskite from lead iodide and 1,5-pentanediamine and the synthesis of 
+                                perovskite from lead bromide and 1,5-pentanediamine</p>
+                            <p>● Proved that X-ray powder diffraction could confirm the absence of lead halide in the crystal phase composition 
+                                and indirectly confirmed the formation of mixed perovskite</p>
+                            <p>● Used diffusion reflection spectroscopy and subsequent DASF transformation to determine the forbidden zone 
+                                width of the obtained perovskite</p>
+                            <h3 style="color:rgb(57, 167, 241); text-align: left; font-size: 150%;">Photo</h3>
+                            <div class="image-row">
+                                <div class="container">
+                                    <img src="4.jpg" alt="Dog 1" class="image">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <p>Name: 2023 Contemporary Undergraduate Mathematical Contest in Modeling</p>
+                                            <p>Awards:Third Prize</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <img src="5.jpg" alt="Dog 12" class="image">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <p>Name:.Shenzhen Cup Mathematical Modelling Challenge</p>
+                                            <p>Awards: Third Prize</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <p style="color: rgb(57, 167, 241); font-size: 120%;text-align:right">Experience</p>
+                    </div>
+                    <div id="content3" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Inquiry</h3>
+                        <h2>Inquiry Form</h2>
+                        <p>Here you can fill in the information you want to know more about. We will contact you as soon as possible after receiving your information.</p>
+
+                        <div class="container2">
+                            <form action="http://localhost:3000/save" method="POST">
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="fname">Name</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="allname" name="name" placeholder="Your name..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="emial">Email</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="emial" name="emial" placeholder="Your emial..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="phone">Phonenumber</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="phone" name="phonenumber" placeholder="Your phonenumber..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="subject">Describe</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>                
+                    <div id="content4" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241);">contact information</h3>
+                        <h3 style="color:rgb(11, 2, 16);">Here are all my contact information. If you want to find me quickly, you can use the following methods, or learn more relevant information, you can also use the following methods.</h3>
+                        <p class="text2">
+                        <h4 style="color:rgb(147, 19, 87);">
+                            Address: <a href="https://www.google.com/maps?q=60+Huntington+Ave,+Boston,+MA" target="_blank" style="color:inherit; text-decoration:none;">60 Huntington Ave, Boston, MA</a>
+                        </h4>
+                        </p>
+                        <h4 style="color:rgb(11, 2, 16);">Zip Code:02115</h4>
+                        <h4 style="color:rgb(11, 2, 16);">Telephone:xxx-xxx-xxxx</h4>
+                        <h4 style="color:rgb(11, 2, 16);">Email:chwr0001@gmail.com</h4>
+                        <h4 style="color:rgb(200, 193, 197);">
+                            Github: <a href="https://github.com/Chw417/Web.git" target="_blank" style="color:inherit; text-decoration:none;">Web Assignment</a>
+                        </h4>
+                    </div>
+              </main>
+              
+          </div>
+      </div>
+      <footer style="text-align: center; color: rgb(136, 3, 3); font-size: 120%; margin-top: 20px;">
+        <p>Thank you for viewing</p>
+    </footer>
+</body>
+<script>
+    function showContent(id) {
+    // 隐藏所有内容
+    var contents = document.getElementById('main').children;
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+    // 显示选中的内容
+    document.getElementById(id).style.display = 'block';
+}
+//     function showContent(id) {
+//     if (id === 'content1') {
+//         window.open('web端.html1', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     if (id === 'content2') {
+//         window.open('web端.html2', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     if (id === 'content3') {
+//         window.open('web端.html3', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     if (id === 'content4') {
+//         window.open('web端.html4', '_blank'); // Opens "web端.html" in a new tab/window    
+//     } 
+//     else {
+//         var contents = document.getElementById('main').children;
+//         for (var i = 0; i < contents.length; i++) {
+//             contents[i].style.display = 'none';
+//         }
+//         document.getElementById(id).style.display = 'block';
+//     }
+// }
+
+// 当页面加载完成后，显示默认的欢迎内容
+const hospitals = [
+            { name: "International Algorithm Case Competition", address: "Shenzhen, China", time: "Jul. 2023 – Dec .2023" },
+            { name: "SMBU School Level Research and Innovation Project", address: "Shenzhen, China", time: "May 2023 – May 2024" },
+            { name: "2023 Contemporary Undergraduate Mathematical Contest in Modeling", address: "Shenzhen, China", time: "Sep. 2023" },
+            { name: "Shenzhen Cup Mathematical Modelling Challenge", address: "Shenzhen, China", time: "Aug. 2023 – Sep. 2023" },
+            { name: "Machine Learning Essentials Online Research Seminar", address: "Shenzhen, China", time: "Jan. 2023 – Apr. 2023" },
+            { name: "Study on Reductive Degradation of La2NiO4", address: "Shenzhen, China", time: "Mar. 2023 – Jul. 2023" },
+            { name: "Synthesis Based on Mixed Perovskite Lead Halide and 1,5-pentanediamine", address: "Shenzhen, China", time: "Sep. 2022 – Jan. 2023" },      
+          ];
+
+        const rowsPerPage = 10; // 每页显示的行数
+        let currentPage = 1; // 当前页码
+
+        // 渲染表格内容
+        function renderTable() {
+            const startIndex = (currentPage - 1) * rowsPerPage;
+            const endIndex = startIndex + rowsPerPage;
+            const pageData = hospitals.slice(startIndex, endIndex);
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = ""; // 清空表格内容
+
+            pageData.forEach(hospital => {
+                const row = `<tr>
+                    <td>${hospital.name}</td>
+                    <td>${hospital.address}</td>
+                    <td>${hospital.time}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            updatePaginationInfo();
+        }
+
+        window.onload = function() {
+        showContent('content1'); // 显示默认的欢迎页面内容
+        renderTable(); // 初始化表格第一页数据
+        };
+
+        function saveData() {//链接数据
+            // 获取表单数据
+            const allname = document.getElementById("allname").value;
+            const emial = document.getElementById("emial").value;
+            const Phonenumber = document.getElementById("phone").value;
+            const subject = document.getElementById("subject").value;
+
+            // 格式化数据
+            const data = `Name: ${allname}\nEmial: ${emial}\nPhonenumber: ${phone}\nSubject: ${subject}\n-------------------\n`;
+
+            // 创建 Blob 对象
+            const blob = new Blob([data], { type: "text/plain" });
+
+            // 创建一个下载链接
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "data.txt"; // 文件名
+            a.click();
+
+            // 释放 URL 对象
+            URL.revokeObjectURL(a.href);
+        }
+
+
+</script>
+
+</html>
