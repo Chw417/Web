@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Checklist</title>
+  <link rel="stylesheet" href="table.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <div id="header">
+    <h1>Full Name: Hongwei Chen</h1>
+    <p>NUID: 002301480</p>
+  </div>
+
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>STUDENT</th>
+        <th>ADVISOR</th>
+        <th>AWARD STATUS</th>
+        <th>SEMESTER</th>
+        <th>TYPE</th>
+        <th>BUDGET #</th>
+        <th>PERCENTAGE</th>
+        <th>DELETE</th>
+        <th>EDIT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Initial rows -->
+      <tr>
+        <td>
+          <input type="checkbox"><br><br>
+          <img src="down.png" width="25px" class="toggle-btn">
+        </td>
+        <td>Student 1</td>
+        <td>Teacher 1</td>
+        <td>Approved</td>
+        <td>Fall</td>
+        <td>TA</td>
+        <td>12345</td>
+        <td>100%</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="details-row" style="display: none;">
+        <td colspan="10">
+          <strong>Advisor:</strong> Teacher 1<br>
+          <strong>Award Details:</strong> Full Scholarship<br>
+          <strong>Semester:</strong> Fall<br>
+          <strong>Budget Number:</strong> 12345<br>
+          <strong>Comments:</strong> Excellent performance.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br>
+
+  <button id="submitBtn" disabled>SUBMIT SELECTED AWARDS</button>
+  <button id="addBtn">ADD NEW STUDENT</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
