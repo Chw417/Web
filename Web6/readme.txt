@@ -118,57 +118,67 @@ This project is a simple web-based calculator that allows users to perform basic
 4. Click on operation buttons to perform calculations.
 5. View the result in the result field.
 
-# Stopwatch Web Application
+# Simple Stopwatch Web Application
 
 ## Description
-This is a simple stopwatch web application built using HTML, CSS, JavaScript, and jQuery. The application allows users to start, stop, and reset a stopwatch while displaying the elapsed time in hours, minutes, and seconds. It also includes a date picker for selecting a date.
+This is a simple stopwatch web application built using HTML, CSS, JavaScript, and jQuery. It allows users to start, stop, and reset a stopwatch. The application utilizes modern JavaScript features like async/await, Promises, setInterval, and clearInterval to manage the timing functions efficiently.
 
-## Features
-- Start, Stop, and Reset functionality for the stopwatch.
-- Display time in HH:MM:SS format.
-- Date picker to select a date.
-- User-friendly interface with interactive buttons.
-- Responsive design with CSS styling.
+## Tags Used
 
-## Technologies Used
-- HTML
-- CSS
-- JavaScript
-- jQuery
-
-## HTML Tags Used
+### HTML Tags:
 - `<!DOCTYPE html>`: Defines the document type and version.
-- `<html lang="en">`: Specifies the language as English.
-- `<head>`: Contains metadata and linked resources.
-  - `<meta charset="UTF-8">`: Specifies the character encoding as UTF-8.
-  - `<meta name="viewport" content="width=device-width, initial-scale=1.0">`: Ensures responsiveness.
-  - `<title>`: Sets the title of the webpage.
-  - `<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>`: Imports jQuery library.
-- `<style>`: Defines CSS styles for layout and design.
-- `<body>`: Contains the main content of the webpage.
-- `<div class="container">`: Wrapper for the stopwatch UI.
-- `<h2>`: Displays the title "Simple Stopwatch".
-- `<label>`: Provides labels for input fields.
-- `<input type="date">`: Allows users to select a date.
-- `<div id="timeDisplay">`: Displays the stopwatch time.
-- `<div class="button-container">`: Wraps the stopwatch control buttons.
-- `<button>`: Represents the Start, Stop, and Reset buttons.
-- `<script>`: Contains the JavaScript logic for stopwatch functionality.
+- `<html>`: The root element of the HTML document.
+- `<head>`: Contains meta-information about the document.
+- `<meta>`: Specifies metadata (charset and viewport settings).
+- `<title>`: Sets the title of the webpage.
+- `<script>`: Includes external JavaScript (jQuery) and internal script logic.
+- `<style>`: Defines internal CSS styles.
+- `<body>`: Contains the content of the webpage.
+- `<div>`: Used for structuring elements.
+- `<h2>`: Defines a heading.
+- `<label>`: Provides labels for form elements.
+- `<input>`: Allows users to select a date.
+- `<button>`: Triggers stopwatch actions.
 
-## JavaScript Functionalities
-- `startStopwatch()`: Starts the stopwatch and updates the time every second.
+### CSS Properties:
+- `font-family`: Sets the font style.
+- `background-color`: Defines the background color.
+- `display`, `justify-content`, `align-items`: Used for flexbox styling.
+- `height`, `width`, `margin`, `padding`: Controls the layout.
+- `border-radius`: Adds rounded corners.
+- `box-shadow`: Adds a shadow effect.
+- `color`: Changes text color.
+- `font-size`, `font-weight`: Adjusts text appearance.
+- `cursor`: Changes cursor type.
+- `transition`: Adds smooth effects.
+- `gap`: Defines spacing between buttons.
+
+### JavaScript Functions:
+- `async/await`: Ensures the stopwatch runs asynchronously.
+- `Promise`: Manages execution control.
+- `setInterval`: Handles stopwatch time increments.
+- `clearInterval`: Stops the stopwatch.
+- `isRunning`: Tracks stopwatch state.
+- `updateDisplay()`: Updates the displayed time.
+- `startStopwatch()`: Starts the stopwatch asynchronously.
 - `stopStopwatch()`: Stops the running stopwatch.
-- `resetStopwatch()`: Resets the stopwatch back to 00:00:00.
-- `updateDisplay()`: Updates the time display dynamically.
-- jQuery is used for event handling and element selection.
+- `resetStopwatch()`: Resets the timer to 00:00:00.
+- `prop()`: Enables/disables buttons dynamically.
+- `click()`: Binds event listeners to buttons.
 
-## Usage
-1. Open the `index.html` file in a web browser.
-2. Select a date (optional).
-3. Click the "Start" button to begin the stopwatch.
-4. Click the "Stop" button to pause the stopwatch.
-5. Click the "Reset" button to reset the stopwatch to 00:00:00.
+## How to Use
+1. Open the `index.html` file in a browser.
+2. Click **Start** to begin the stopwatch.
+3. Click **Stop** to pause the stopwatch.
+4. Click **Reset** to reset the time to 00:00:00.
+5. Optionally, select a date using the date picker (not directly connected to the stopwatch functionality).
 
-## Author
-Developed as a simple web-based stopwatch using HTML, CSS, and jQuery.
+## Requirements
+- A modern web browser (Chrome, Firefox, Edge, Safari)
+- Internet connection (for loading jQuery)
+
+## Future Enhancements
+- Add lap timing functionality.
+- Save stopwatch state using localStorage.
+- Add a countdown timer mode.
 
