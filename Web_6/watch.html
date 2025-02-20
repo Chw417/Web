@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        input[type="date"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #timeDisplay {
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Stopwatch</h2>
+        <label for="datePicker">Select Date:</label>
+        <input type="date" id="datePicker" onkeydown="return false"><br>
+
+        <div id="timeDisplay">00:00:00</div>
+
+        <div class="button-container">
+            <button id="startBtn">Start</button>
+            <button id="stopBtn" disabled>Stop</button>
+            <button id="resetBtn" disabled>Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let interval;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+        let isRunning = false; // 用于跟踪秒表是否正在运行
+
+        const updateDisplay = () => {
+            const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            $("#timeDisplay").text(formattedTime);
+        };
+
+        const startStopwatch = () => {
+            if (isRunning) return; // 如果已经在运行，则不再创建新的 interval
+            isRunning = true;
+
+            // 启用 "Stop" 按钮，禁用 "Start" 按钮
+            $("#startBtn").prop("disabled", true);
+            $("#stopBtn").prop("disabled", false);
+            $("#resetBtn").prop("disabled", true);
+
+            interval = setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes === 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+                updateDisplay();
+            }, 1000);
+        };
+
+        const stopStopwatch = () => {
+            clearInterval(interval);
+            isRunning = false;
+
+            // 启用 "Start" 和 "Reset" 按钮，禁用 "Stop" 按钮
+            $("#startBtn").prop("disabled", false);
+            $("#stopBtn").prop("disabled", true);
+            $("#resetBtn").prop("disabled", false);
+        };
+
+        const resetStopwatch = () => {
+            clearInterval(interval);
+            isRunning = false;
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            updateDisplay();
+
+            // 启用 "Start" 按钮，禁用 "Stop" 和 "Reset" 按钮
+            $("#startBtn").prop("disabled", false);
+            $("#stopBtn").prop("disabled", true);
+            $("#resetBtn").prop("disabled", true);
+        };
+
+        // 事件监听器
+        $("#startBtn").click(startStopwatch);
+        $("#stopBtn").click(stopStopwatch);
+        $("#resetBtn").click(resetStopwatch);
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+            text-align: left;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"], button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: -10px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        #loginButton:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login Page</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter Northeastern email">
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+                <div id="usernameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+            <button type="submit" id="loginButton" disabled>Login</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function validateEmail() {
+                const email = $("#email").val();
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@northeastern\.edu$/;
+                if (!email.match(emailRegex)) {
+                    $("#emailError").text("Please enter a valid Northeastern email.");
+                    return false;
+                } else {
+                    $("#emailError").text("");
+                    return true;
+                }
+            }
+
+            function validateUsername() {
+                const username = $("#username").val();
+                const usernameRegex = /^[a-zA-Z_]{3,15}$/;
+                if (!username.match(usernameRegex)) {
+                    $("#usernameError").text("Username must be 3-15 characters and names should not have numbers or special characters.");
+                    return false;
+                } else {
+                    $("#usernameError").text("");
+                    return true;
+                }
+            }
+
+            function validatePassword() {
+                const password = $("#password").val();
+                const confirmPassword = $("#confirmPassword").val();
+                if (password.length < 6 || password.length > 18) {
+                    $("#passwordError").text("Password must be between 6 and 18 characters.");
+                    return false;
+                } else {
+                    $("#passwordError").text("");
+                    if (password !== confirmPassword) {
+                        $("#confirmPasswordError").text("Passwords do not match.");
+                        return false;
+                    } else {
+                        $("#confirmPasswordError").text("");
+                        return true;
+                    }
+                }
+            }
+
+
+            $("input").on("input", function() {
+                if (validateEmail() && validateUsername() && validatePassword()) {
+                    $("#loginButton").prop("disabled", false);
+                } else {
+                    $("#loginButton").prop("disabled", true);
+                }
+            });
+
+            $("#loginForm").on("submit", function(event) {
+                event.preventDefault();
+                if (validateEmail() && validateUsername() && validatePassword()) {
+                    window.location.href = "calculator.html?username=" + $("#username").val();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
