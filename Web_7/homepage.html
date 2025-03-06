@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8" />
+    <title>Sports Center</title>
+    <link rel="icon" type="image/jp" href="3.jpg">
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // 此代码将在页面加载完成后执行
+          showContent('content1');
+        });//显示刚进入网站时的样子
+    </script>
+</head>
+<body>
+    <div class="header-container">
+        <h1 class="header" style="background-color: black; color: white;">Sports Center</h1>
+        <div class="topnav">
+            <a href="#" onclick="showContent('content1'); return false;">Front page</a>
+            <a href="#" onclick="showContent('content2'); return false;">Equipment List</a>
+            <a href="#" onclick="showContent('content3'); return false;">Inquiry Form</a>
+            <a href="#" onclick="showContent('content4'); return false;">Contact Information</a>
+        </div>
+    </div>
+    
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="4.jpg" alt="Perseverance" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+            <h3>Perseverance</h3>
+            <p>Walking in the cold wind</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="5.jpg" alt="Strength" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+            <h3>Strength</h3>
+            <p>Keep the strength and never give up</p>
+            </div> 
+        </div>
+        <div class="carousel-item">
+            <img src="2.jpg" alt="Passion" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+            <h3>Passion</h3>
+            <p>Be positive and every day is a new day.</p>
+            </div>  
+        </div>
+        </div>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>    
+        <div class="page">
+          <header class="header1">
+          <h2 style="color:rgb(57, 167, 241);">Sports Center</h2>
+          </header>
+          <div class="content">
+                <main class="main">
+                  <main id="main" class="main">
+                    <div id="content1">
+                        <iframe width="1680" height="900" src="https://www.youtube.com/embed/HQfF5XRVXjU?si=KZZKv9ykvonz7_pO&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+                        <p style="color: rgb(15, 16, 16); font-size: 120%; text-align: right;">Welcome to the Sports Center</p>                        
+                    </div>
+                    
+
+                    <div id="content2" style="display: none;"> 
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Equipment List</h3>
+                        <!-- 第一行 -->
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="E1.jpg" alt="E1" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name: Treadmill 800</p>
+                                        <p>Function:1.P84 Touchscreen Console – 16" touchscreen with workouts, media app projection, and premium content.</p>
+                                        <p>2.Power Factor Correction (PFC) – 4HP AC motor with PFC boosts efficiency, performance, and cuts energy use by 30%.</p>
+                                        <p>3.Integrated Footplant Technology™ – Adapts to stride speed for a smooth, natural running experience.</p>
+                                        <p>4.Ground Effects™ Cushioning – Absorbs impact at the front, adds stability at the rear for better support.</p>
+                                        <P>5.Active Status Light – External indicator shows treadmill status for easy maintenance monitoring.</P>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="E2.jpg" alt="E 2" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name: Treadmill 865</p>
+                                        <p>Function:</p>
+                                        <p>1. P62 Touchscreen Console – 10" screen with personalized viewing, TV, and internet options; allows content bookmarking for a customized fitness experience.</p>
+                                        <p>2. Power Factor Correction (PFC) – 4HP high-efficiency AC motor optimizes performance, improves efficiency, and reduces energy consumption by 30%.</p>
+                                        <p>3. Integrated Footplant Technology™ – Recognizes natural stride speed and adjusts to each step for a smooth workout.</p>
+                                        <p>4. Ground Effects™ Cushioning – Patented design provides front impact absorption and rear stability for better support.</p>
+                                        <p>5. Active Status Light – External indicator displays treadmill status for easy maintenance tracking.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 第二行 -->
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="E3.jpg" alt="E 3" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name: Stair climbing machine 885</p>
+                                        <p>Function:</p>
+                                        <p>1. P94 Touchscreen Console – 22" touchscreen with workouts, media app projection, and global landmark-inspired fitness challenges.</p>
+                                        <p>2. Low-Maintenance Pedal Chain – High-strength steel chain requires only annual inspection, with easy-access maintenance panel.</p>
+                                        <p>3. Durability – StairClimber tested over 10,000 hours in lab and real-world conditions for reliability.</p>
+                                        <p>4. Dynamic Step Control™ – Maintains precise step speed with a +/-0.5 step-per-minute tolerance for all users.</p>                                                                             
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="E4.jpg" alt="E 4" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name: Stair climbing machine 835</p>
+                                        <p>Function:</p>
+                                        <p>1. Dynamic Step Control™ – Ensures precise and consistent step speed with a +/-0.5 step-per-minute tolerance for all users.</p>
+                                        <p>2. Low-Maintenance Pedal Chain – Quiet operation with a high-strength steel chain requiring only annual inspection and minimal maintenance.</p>
+                                        <p>3. Durability – StairClimber tested over 10,000 hours in lab and real-world conditions for reliability.</p>
+                                        <p>4. Motivational Workouts – Landmark-inspired training challenges users to climb 30 famous sites, with customizable HIIT programs for extra motivation.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="E5.jpg" alt="E 5" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name:Elbow Extension Triceps Trainer</p>
+                                        <p>Function:</p>
+                                        <p>1. Vitality™ Series – Compact, versatile strength equipment suitable for hotels, residences, and community centers, offering great value.</p>
+                                        <p>2. Modern Design – Sleek style pairs with Vitality benches, racks, and Resolute Strength™ Series for enhanced training experience.</p>
+                                        <p>3. Triceps Extension Machine – Single-seat adjustment for optimal positioning and comfort.</p>
+                                        <p>4. Easy Weight Adjustment – Users can quickly engage additional weight with a simple lever push to increase workout intensity.</p>                                         
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="E6.jpg" alt="E 6" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name:Shoulder Press</p>
+                                        <p>Function:</p>
+                                        <p>1. Vitality™ Series – Compact, versatile strength equipment ideal for hotels, residences, and community centers, offering great value.</p>
+                                        <p>2. Modern Design – Sleek aesthetics complement Vitality benches, racks, and Resolute Strength™ Series for an enhanced training experience.</p>
+                                        <p>3. Shoulder Press Machine – Features oversized multi-position handles and an adjustable seat for optimal workout positioning.</p>
+                                        <p>4. Easy Weight Adjustment – Users can quickly engage additional weight with a simple lever push to increase workout intensity.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="E7.jpg" alt="E 7" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name:Chest Press</p>
+                                        <p>Function:</p>
+                                        <p>1. Multiple Grip Positions – Offers various grip options for diverse exercises, with oversized handles for added comfort during presses.</p>
+                                        <p>2. Adjustable Starting Position – Seat and backrest adjustments allow users to easily find their ideal starting position for comfort and proper form.</p>
+                                        <p>3. Easy Entry and Exit – Low pivot arms ensure proper motion path and easy entry and exit from the chest press machine.</p>
+                                        <p>4. Practical Guidance – Convenient exercise instruction cards provide step-by-step guidance on posture, movements, and targeted muscle groups.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="E8.jpg" alt="E 8" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name:Rear deltoid/pectoral butterfly</p>
+                                        <p>Function:</p>
+                                        <p>1. Easy Starting Position Adjustment – Dual hand positions offer more exercise variations for butterfly chest fly and posterior deltoid movements.</p>
+                                        <p>2. Support for Two Exercises – Narrow backrest provides back support for the chest fly and chest support for posterior deltoid exercises.</p>
+                                        <p>3. Ensures Correct Posture – Pivoting arms automatically adjust during entry, with arm length and position adjustable for proper form in both exercises.</p>
+                                        <p>4. Practical Guidance – Convenient exercise instruction cards provide step-by-step guidance on posture, movements, and targeted muscle groups.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-row">
+                            <div class="container">
+                                <img src="E9.jpg" alt="E 9" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name:High pull-down/seated rowing machine</p>
+                                        <p>Function:</p>
+                                        <p>1. One Machine, Two Exercises – Lat pulldown/Seated row machine supports both lat pulldowns and reverse rows, saving valuable floor space.</p>
+                                        <p>2. Convenient and Durable Cable Rack – The cable is securely stored on the rack without obstructing pulldown movements, and the rack is equipped with a protective layer to prevent scratches and dents.</p>
+                                        <p>3. Easy Adjustment for Different Body Types – Thigh pads are easy to adjust, accommodating users of various sizes.</p>
+                                        <p>4. Practical Guidance – Convenient exercise instruction cards provide step-by-step guidance on posture, movements, and targeted muscle groups.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <img src="E10.jpg" alt="E 10" class="image">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p>Name:Abdominal / Back Muscle Trainer</p>
+                                        <p>Function:</p>
+                                        <p>1. Focus on Comfort – Users can adjust the padded shoulder straps for a comfortable fit during abdominal exercises based on body size.</p>
+                                        <p>2. Adjustable Starting Position – Easy position adjustments offer two starting points for back extensions and one for abdominal exercises, easily adjusted while seated.</p>
+                                        <p>3. One Machine, Two Exercises – Dual-function equipment combines abdominal and back extensions, saving valuable space.</p>
+                                        <p>4. Practical Guidance – Convenient exercise instruction cards provide step-by-step guidance on posture, movements, and targeted muscle groups.</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="content3" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241); text-align: center; font-size: 150%;">Information Collection</h3>
+                        <h2>Information Form</h2>
+                        <p>If you have any equipment you want to consult, you can write down your relevant information in the form. You can also cooperate with us through the form below and we will reply as soon as possible.</p>
+
+                        <div class="container2">
+                            <form action="http://localhost:3000/save" method="POST">
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="fname">First Name</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="lname">Last Name</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="phone">Phonenumber</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="phone" name="phonenumber" placeholder="Your phonenumber..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="subject">Describe</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>                
+
+                    <div id="content4" style="display: none;">
+                        <h3 style="color:rgb(57, 167, 241);">contact information</h3>
+                        
+                        <h3 style="color:rgb(11, 2, 16);">If you want to contact us as soon as possible, you can find us through the following methods. We will help you answer your questions well, or you can come to our company for consultation through the address.</h3>
+                        <h4 style="color:rgb(147, 19, 87);">
+                            Address: <a href="https://www.google.com/maps?q=60+Huntington+Ave,+Boston,+MA" target="_blank" style="color:inherit; text-decoration:none;">60 Huntington Ave, Boston, MA</a>
+                        </h4>
+                        <h4 style="color:rgb(11, 2, 16);">Zip Code:02115</h4>
+                        <h4 style="color:rgb(11, 2, 16);">Telephone:xxx-xxx-xxxx</h4>
+                        <h4 style="color:rgb(11, 2, 16);">Email:chwr0001@gmail.com</h4>
+                    </div>
+              </main>
+          </div>
+      </div>
+      <footer style="text-align: center; color: rgb(136, 3, 3); font-size: 120%; margin-top: 20px;">
+        <p>Thank you for visiting the Sports Center</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

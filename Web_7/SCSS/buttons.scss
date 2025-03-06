@@ -1,0 +1,15 @@
+// Placeholder Selectors
+%btn-style {
+  padding: 10px;
+  border-radius: $border-radius;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.btn {
+  @extend %btn-style;
+  background-color: $primary-color;
+  &:hover {
+    background-color: darken-color($primary-color, 10%);
+  }
+}

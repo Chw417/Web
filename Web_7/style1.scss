@@ -1,0 +1,273 @@
+// Variables for color scheme, font, spacing, etc.
+$primary-color: rgb(57, 167, 241);
+$secondary-color: black;
+$bg-color: #f4f4f4;
+$font-family: Arial, sans-serif;
+$font-size-large: 2.5rem;
+$font-size-medium: 1.2rem;
+$font-size-small: 1rem;
+$border-radius: 5px;
+$border-color: #ddd;
+$btn-bg-color: #0f120f;
+
+// Mixin for flexbox layout
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Mixin for grid layout
+@mixin grid-layout($columns: 3) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: 20px;
+}
+
+// Function to calculate font size based on viewport width
+@function responsive-font-size($min-size, $max-size, $breakpoint) {
+    @if $breakpoint <= 768px {
+      @return $min-size;
+    } @else {
+      @return $max-size;
+    }
+  }
+  
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family;
+  background-color: $bg-color;
+}
+
+// Header Styles
+.header-container {
+  @include flex-center(space-between, center);
+  padding: 10px 20px;
+  background-color: $secondary-color;
+}
+
+.header {
+  margin: 0;
+  font-size: $font-size-large;
+  color: white;
+  flex-grow: 1;
+}
+
+.topnav {
+  @include flex-center(flex-end, center);
+  margin: 0;
+  padding: 0;
+}
+
+.topnav a {
+  padding: 14px 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: $font-size-medium;
+
+  &:hover {
+    background-color: #ddd;
+    color: black;
+  }
+}
+
+// Carousel Styles
+.carousel-inner img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+// Content Section
+.content {
+  padding: 20px;
+}
+
+h3, h2 {
+  color: $primary-color;
+}
+
+// Table Styles
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid $border-color;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+// Button Styles
+button {
+  padding: 10px 20px;
+  background-color: $btn-bg-color;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius;
+  font-size: $font-size-medium;
+
+  &:hover {
+    background-color: darken($btn-bg-color, 10%);
+  }
+}
+
+// Header 1 Styling
+.header1 {
+  text-align: center;
+  padding: 20px;
+  border-style: double;
+  border-color: $primary-color;
+  background-color: #333;
+}
+
+// Form Styles
+.container2 form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container2 .row {
+  margin-bottom: 10px;
+}
+
+.container2 .row label {
+  font-size: $font-size-medium;
+  color: #333;
+}
+
+.container2 .row input, .container2 .row textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-size: $font-size-small;
+}
+
+.container2 .row textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+// Image Row Styling
+.image-row {
+  @include flex-center(space-between, center);
+  margin-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  width: 48%;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  .text {
+    color: white;
+    font-size: $font-size-medium;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+// Footer Styles
+footer {
+  margin: 0;
+  padding: 20px;
+  background-color: $secondary-color;
+  color: white;
+  text-align: center;
+  font-size: $font-size-medium;
+}
+
+// Responsive Design - Small Screen Adjustments
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .header {
+    font-size: responsive-font-size(2rem, 3rem, 768px);
+  }
+
+  .topnav a {
+    font-size: 1rem;
+  }
+
+  table th, table td {
+    font-size: 1rem;
+  }
+
+  .container2 form {
+    width: 90%;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+// Text Styling
+.text {
+  max-width: 100%;
+  width: 600px;
+
+  p {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
+}

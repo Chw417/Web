@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: $padding;
+  border-radius: $border-radius;
+  @include box-shadow;
+}

@@ -1,0 +1,105 @@
+// Variables
+$primary-color: #050b11;
+$secondary-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 8px;
+$padding: 20px;
+
+:root {
+  --main-color: #{$primary-color};
+}
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 4px 8px rgba(140, 10, 10, 0.1);
+}
+
+// Functions
+@function darken-color($color, $amount) {
+  @return darken($color, $amount);
+}
+
+// Placeholder Selectors
+%btn-style {
+  padding: 10px;
+  border-radius: $border-radius;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+// Global Styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+  color: $text-color;
+  @include flex-center;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: $padding;
+  border-radius: $border-radius;
+  @include box-shadow;
+}
+
+.header, .footer {
+  text-align: center;
+  padding: 10px;
+  background: var(--main-color);
+  color: white;
+}
+
+.login-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $padding;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  width: 150%;
+}
+
+.btn {
+  @extend %btn-style;
+  background-color: $primary-color;
+  &:hover {
+    background-color: darken-color($primary-color, 10%);
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+  background-image: url('1.jpg'); /* Add the background image here */
+  background-size: cover; /* Ensures the image covers the whole screen */
+  background-position: center center; /* Centers the background image */
+  color: $text-color;
+  @include flex-center;
+  height: 100vh;
+}
+  
